@@ -1,0 +1,99 @@
+{% extends  'base.html' %}
+{% block styles %} 
+    .backbox{
+        float: left;
+        background-color: #2d283e;
+        width: 99%;
+        margin-left: .5%;
+        margin-right: .5%;
+    }
+    .top{
+        margin-top: .5%;
+        height: 35vw;
+        margin-bottom: .5%;
+    }
+    .middle{
+        margin-top:.5%;
+        height : 20vw;
+    }
+    .creator{
+        margin-top: .5%;
+        padding-top: 2px;
+        height : 30vw
+    }
+    .bottom{
+        background-color: #333;
+        height: 20vw;
+        margin-top: .5%;
+        margin-bottom: .5%;
+    }
+    .creatorbox1{
+        background-color: rgb(0, 0, 0);
+        width: 10vw;
+        height: 10vw   ;
+        position: relative;
+        margin-left: 23%;
+    }
+    .creatorbox2{
+        background-color: rgb(0, 0, 0);
+        margin-left: 66%;
+        width: 10vw;
+        height: 10vw;
+        position: relative;
+        margin-top: -10%;
+    }
+    .grid-container{
+        display: grid;
+        grid-template-columns: auto 10px auto 10px auto;
+        
+        margin-left: .5%;
+        margin-right: .5%;
+        width: 99%;
+        
+    }
+    .grid-item{ 
+        padding: 2px;
+        font-size: 15px;
+        text-align: center;
+        background-color: #2d283e;
+        height: 20vw;
+    }
+    {% endblock %}
+    {% block title%}
+    Home
+    {% endblock %}
+{% block content %}
+<section name = "Main Home">
+    <div class = "top backbox">
+        <h1 style="font-family: Helvetica ; text-align : center; color: #802BB1; font-size: 50px;">Market Hack Analytics</h1>
+        <h1 style="font-family: Helvetica ; text-align : center; color: #0099ff;font-size: 25px;">The Stock Website for the everyday user</h1>
+    </div>
+</section>
+<section>
+    <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item" style="background-color: #564F6F;height: 20vw;"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item" style="background-color: #564F6F;height: 20vw;"></div>
+        <div class="grid-item" ></div>
+</section>
+<section name = "Second Box">
+    <div class ="middle backbox">
+
+    </div>
+</section>
+<section>
+    <div class = "creator backbox">
+        <h2 style="font-family: Helvetica; text-align: center; color: #802BB1; font-size: 30px; margin-top: 10;">Creators:</h2>
+        <div class = "creatorbox1"> </div>
+        <div class = "creatorbox2"> </div>
+        <p></p>
+        <p></p>
+    </div>
+</section>
+<section name = "bottom box">
+    <div class = "bottom backbox">
+
+    </div>
+</section>
+{% endblock %}

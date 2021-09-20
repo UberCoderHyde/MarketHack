@@ -1,0 +1,27 @@
+{% extends  'base.html' %}
+
+{% block styles %}
+.backbox{
+    float: left;
+    background-color: #2d283e;
+    width: 99%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+.top{
+    margin-top: .5%;
+    height:35vw;
+    margin-bottom: .5%;
+}
+{% endblock %}
+{% block title%}
+    Account
+{% endblock %}
+{%  block content %}
+<section>
+    <div class="top backbox">
+        <h1 style="color: #ae3df0;">Hello {{request.user.username}}</h1>
+        <a href="http://127.0.0.1:8000/account/delete/"style="color:red;">Delete Account</a>
+    </div>
+</section>
+{% endblock %}

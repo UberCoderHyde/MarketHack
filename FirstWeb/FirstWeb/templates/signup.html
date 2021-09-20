@@ -1,0 +1,55 @@
+{% extends  'base.html' %}
+{% block styles %}
+.backbox{
+    float: left;
+    background-color: #2d283e;
+    width: 99%;
+    margin-left: .5%;
+    margin-right: .5%;
+}
+.container{
+    padding-left: 10px;
+    color: #0099ff;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto 25vw auto;
+    margin-top: .5%;
+    margin-left: .5%;
+    margin-right: .5%;
+    width: 99%;
+    
+}
+.grid-item{
+    padding: 2px;
+    font-size: 15px;
+    background-color: #2d283e;
+    height: 40vw;
+}
+{% endblock %}
+{% block title%}
+    Signup
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<section>
+    <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item">
+            <div class="container py-5">
+                <h1 style="text-align: center;color: #802BB1;">Register</h1>
+                <form method="POST">    
+                    {% csrf_token %}
+                    {{ form|crispy }}    
+                    <p></p>   
+                    <div style="text-align:center;">     
+                    <button class="btn btn-primary" type="submit" style="font-size:15px;font-weight: bold;width :5vw;height: 2vw;background-color: #564F6F;color: black;">Register</button>
+                    </div>
+                </form>
+                <p class="text-left">If you already have an account, <a href="http://127.0.0.1:8000/account/login/">login</a> instead.</p>
+            </div>
+        </div>
+        <div class="grid-item"></div>
+</section>
+{% endblock %}

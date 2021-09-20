@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block styles %}
+.container{
+    padding-left: 10px;
+    color: #0099ff;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: auto 25vw auto;
+    margin-top: .5%;
+    margin-left: .5%;
+    margin-right: .5%;
+    width: 99%;
+    
+}
+.grid-item{
+    padding: 2px;
+    font-size: 15px;
+    background-color: #2d283e;
+    height: 30vw;
+}
+{% endblock %}
+{% block title%}
+    Log in
+{% endblock %}
+{% block content %}
+<section>
+    <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item">
+            <div class="container py-5">
+                <h1 style="text-align: center;color: #802BB1;" >Log In</h1>
+                <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Log In</button>
+                </form>
+                <p class="text-left">Dont have a account? Go <a href="http://127.0.0.1:8000/account/signup/">here</a> instead.</p>
+            </div>
+        </div>
+    <div class="grid-item"></div>
+</section>
+{% endblock%}

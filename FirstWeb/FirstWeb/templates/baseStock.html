@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block styles %}
+.top{
+    margin-top: .5%;
+    height : auto;
+}
+.middle{
+    margin-top:.5%;
+    height : 40vw;
+}
+.data{
+    margin-top: .5%;
+    padding-top: 2px;
+    height : 10vw
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2d283e;
+    padding: 10px;
+    width: 99%;
+    margin-left: .5%;
+    margin-right: .5%;
+    }
+
+.grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+}
+{% endblock %}
+
+{% block title%}
+{{ name }}
+{% endblock %}
+
+{% block content %}
+{{ request.path|json_script:"link"}}
+{{ stock|json_script:"stock" }}
+<section name="Main Page">
+    <div class="top backbox">
+        <h2><</h2>
+        <h1 style="color: #ae3df0;">Ticker Symbol: {{ name }}</h1>
+        <h2 id="price" style="color: #ae3df0;">Live Price: {{livePrice}}</h2>
+        <h2 id = "PE" style="color: #ae3df0;">Price to Equity: {{PERatio}}</h2>
+        <h2 id = "PriceToBook" style="color: #ae3df0;">Price To Book: {{priceToBook}}</h2>
+        <h2 id = "DE"style="color: #ae3df0;">Debt To Equity: {{DE}}</h2>
+        <h2 id = "FCF" style="color: #ae3df0;">Free Cash Flow: {{FCF}}</h2>
+        <h2 id = "PEG" style="color: #ae3df0;">Price Earnings To Growth: {{PEG}}</h2>
+        <h2></h2>
+    </div>
+</section>
+<section name= "Personal Data Page">
+    <div class="middle backbox">
+        <div class="grid-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>  
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>  
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>0</div>
+          </div>
+    </div>
+</section>
+<section name="All other Data">
+    <div class="data backbox">
+    
+    </div>
+</section>
+<script src="{% static 'stock.js' %}"></script>
+
+{% endblock%}

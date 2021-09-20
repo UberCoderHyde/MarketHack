@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title%}
+   Delete Account
+{% endblock %}
+{% block content %}
+<h1 style="color: #ae3df0;">Hello {{request.user.username}} are you sure you want to delete account?</h1>
+<a href="http://127.0.0.1:8000/account/delete_account/">Click here for yes</a>
+<a href="http://127.0.0.1:8000/">Click here for no and bring back to home page</a>
+{% endblock %}

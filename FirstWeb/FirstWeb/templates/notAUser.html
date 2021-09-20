@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block style %}
+.backbox{
+    float: center;
+    background-color: #2d283e;
+    width: 50%
+    height: 50%
+    margin-left: .5%;
+    margin-right: .5%;
+}
+.container{
+    padding-left: 10px;
+    color: #0099ff;
+{% endblock %}
+
+{% block title %}
+Not A User
+{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<section>
+    <div class="message_backbox">
+        <h1 style="font-family: Helvetica ; text-align : center; color: #802BB1; font-size: 50px;">You don't have an account, <a href="http://127.0.0.1:8000/account/signup/">CLICK HERE</a>  to make an account</h1>
+    </div>
+</section>
+{% endblock %}
