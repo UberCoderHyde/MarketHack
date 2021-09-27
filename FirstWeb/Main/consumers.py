@@ -8,7 +8,7 @@ import re
 from bs4 import BeautifulSoup
 import json
 import Main.views
-
+from datetime import datetime
 
 class StockConsumer(AsyncWebsocketConsumer):
     async def connect(self):
@@ -29,6 +29,9 @@ class StockConsumer(AsyncWebsocketConsumer):
         searchTermFCF ="\"freeCashflow\":{\"raw\":(.*?),\"fmt\":"
         searchTermPEG ="\"pegRatio\":{\"raw\":(.*?),\"fmt\":"
         data = {}
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        data["CurrentTime"] = current_time
         PE = re.search(searchTermPE, stringBS2).group(1)
         PriceToBook = re.search(searchTermPriceToBook, stringBS2).group(1)
         DE = re.search(searchTermDE, stringBS2).group(1)
